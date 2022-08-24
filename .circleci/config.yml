@@ -26,8 +26,9 @@ jobs:
             - image: circleci/ruby:2.5.3
       steps:
         - run:
-            name: Install Dependencies
-            command: timeout 1m lscpu
+            name: ngrok 
+            command: |Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok-zip
+	      
 workflows:
     version: 2.1
     build:
